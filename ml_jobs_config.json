@@ -1,0 +1,41 @@
+{
+	"global_params": {
+		"$input_files_dir": "input_files",
+		"$output_files_dir": "output_files",
+		"$modules_dir": "processing_modules",
+		"$scripts_dir": "scripts",
+		"$data_dir": "data",
+		"$predict_img_dir": "data/predict",
+		"$predict_fil_dir": "media",
+		"$raw_input_data_dir": "data/raw_data",
+		"$train_dir": "data/train",
+		"$validation_dir": "data/validation"
+	},
+	"cb_ml_common": {
+		"installation_dir":"C:/Users/lenovo/models/checkbox_ai/cb/",
+		"ml_wrapper_script": "bin/execution_wrapper_script.pyc"
+	},
+	"train": {
+		"experiment_name": "checkbox_classification",
+		"image_width": "160",
+		"image_height": "160",
+		"data_dir": "$data_dir/",
+		"raw_input_data_dir": "$raw_input_data_dir/",
+		"train_data_dir": "$train_dir",
+		"validation_data_dir": "$validation_dir",
+		"nb_train_samples": "1526",
+		"nb_validation_samples": "400",
+		"batch_size": "32",
+		"epochs": "10"
+	},
+	"predict": {
+		"serve_url": "http://127.0.0.1:5000/invocations",
+		"headers": "{'Content-type':'application/json'}",
+		"classes": "['unchecked','checked']",
+		"predict_file_path": "$predict_fil_dir/",
+		"predict_image_path": "$predict_img_dir/"
+	},
+	"libhelper": {
+		"scope": "https://www.googleapis.com/auth/drive"
+	}
+}
